@@ -15,6 +15,6 @@ def load_encrypted_model(path: str, secret_key: str):
 
     # joblib.loads() requires a file-like object → wrap bytes in BytesIO
     buffer = io.BytesIO(decrypted)
-    model = joblib.load(buffer)
+    model = joblib.loads(buffer)
 
     return model

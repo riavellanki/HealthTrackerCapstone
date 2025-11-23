@@ -13,8 +13,8 @@ def load_encrypted_model(path: str, secret_key: str):
 
     decrypted = cipher.decrypt(encrypted)
 
-    # joblib.loads() requires a file-like object → wrap bytes in BytesIO
+    # joblib.load() requires a file-like object → wrap bytes in BytesIO
     buffer = io.BytesIO(decrypted)
-    model = joblib.loads(buffer)
+    model = joblib.load(buffer)
 
     return model
